@@ -34,7 +34,7 @@ def choice_result(human_choice,comp_choice):
     if(a-b)%3==1:
         comp_scr=comp_scr+1
     elif (a==b):
-        print("Tie")
+        print("DRAW")
     else:
         human_scr=human_scr+1
 
