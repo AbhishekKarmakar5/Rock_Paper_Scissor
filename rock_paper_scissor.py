@@ -86,14 +86,12 @@ def frame_fun():
     # Create a frame and assign callbacks to event handlers
     frame = simplegui.create_frame("Backgrounds", 500,300)
     frame.set_canvas_background("Black")
-   # frame = simplegui.create_frame("Home", 500, 300)
+    
     frame.add_button("Rock",rock)
     frame.add_button("Paper", paper)
     frame.add_button("Scissors", scissor)
     frame.set_draw_handler(draw)
     
-
-
     frame.start()
     
 frame_fun()
