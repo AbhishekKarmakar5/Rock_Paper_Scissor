@@ -5,6 +5,7 @@ comp_scr=0
 human_scr=0;
 comp_choice=""
 human_choice=""
+tie=0
 
 def choice_number(choice):
     if choice=='rock':
@@ -28,6 +29,7 @@ def random_comp_choice():
 def choice_result(human_choice,comp_choice):
     global human_scr
     global comp_scr
+    global tie
     
     a=choice_number(human_choice)
     b=choice_number(comp_choice)
@@ -35,6 +37,7 @@ def choice_result(human_choice,comp_choice):
         comp_scr=comp_scr+1
     elif (a==b):
         print("DRAW")
+        tie=tie+1
     else:
         human_scr=human_scr+1
 
@@ -72,9 +75,10 @@ def scissor():
 def draw(canvas):
     try:
         canvas.draw_text("You : "+ human_choice,[20,40],48,"Yellow")
-        canvas.draw_text("COMPUTER : "+ comp_choice,[20,90],38,"Orange")
+        canvas.draw_text("Computer : "+ comp_choice,[20,90],38,"Orange")
         canvas.draw_text("HUMAN SCORE: "+ str(human_scr),[10,150],30,"Green")
         canvas.draw_text("COMPUTER SCORE: "+ str(comp_scr),[10,190],30,"Red")
+        canvas.draw_text("DRAW : "+ str(tie),[10,230],30,"White")
     except TypeError:
         pass
 
